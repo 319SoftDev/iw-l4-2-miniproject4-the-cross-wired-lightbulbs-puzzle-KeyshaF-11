@@ -115,14 +115,26 @@ switch57.addEventListener("change", function () {
 const masterSwitch = document.querySelector("#switch10");
 const MasterSwitch = () => {
     evenNumberLights = [2, 4, 6, 8,]; //This turns on only the even numbered lights
-    if (masterSwitch.checked) {
-        evenNumberLights.forEach((num) => {
-            const light = document.querySelector(`#lightbulb${num}`);
-            light.classList.toggle("active");
-        });
-    } else {
-        masterSwitch.checked = false;
-    }
+    
+    evenNumberLights.forEach((num) => {
+        const light = document.querySelector(`#lightbulb${num}`);
+        light.classList.toggle("active");
+        if (light.classList.contains("active")) {
+            switch2.checked = true;
+            switch4.checked = true;
+            switch6.checked = true;
+            switch8.checked = true;
+
+        } else {
+            switch2.checked = false;
+            switch4.checked = false;
+            switch6.checked = false;
+            switch8.checked = false;
+        }
+
+
+// this makes the switch stay in its current state when clicked
+    });
     
     
 };

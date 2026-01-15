@@ -50,6 +50,7 @@ input:checked + .slider:before {
 body {
   background-color: ivory;
   margin: 20px;
+
 }
 
 .light {
@@ -60,8 +61,8 @@ body {
 
 /* put everything inside a wrapper so  */
 #wrapper {
-  width: 1200px;
-  max-width: 90%;
+  width: 900px;
+  max-width: 80%;
   margin: auto;
   background-color: grey;
   margin-top: 0;
