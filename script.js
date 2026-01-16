@@ -215,12 +215,22 @@ masterSwitch.addEventListener("change", MasterSwitch);
 /// RESET BUTTON ///
 const resetButton = document.querySelector("#switch11");
 resetButton.addEventListener("click", function () {
-    const switches = document.querySelectorAll(".switch");
-    switches.forEach(switchElement => {
-        switchElement.checked = false;
-    });
+    if (resetButton.type === "reset"){
+        switch1.checked = false;
+        switch2.checked = false;
+        switch3.checked = false;
+        switch4.checked = false;
+        switch57.checked = false;
+        switch6.checked = false;
+        switch7.checked = false;
+        switch8.checked = false;
+        switch9.checked = false;
+        masterSwitch.checked = false;
+    }
+   
     const lights = document.querySelectorAll(".lightbulb");
     lights.forEach(light => {
         light.classList.remove("active");
-    });
+
+  });
 });
