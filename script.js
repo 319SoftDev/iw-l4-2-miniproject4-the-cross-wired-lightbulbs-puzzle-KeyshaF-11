@@ -6,6 +6,16 @@ const light8 = document.querySelector("#lightbulb8");
 switch1.addEventListener("change", function () {
     light3.classList.toggle("active");
     light8.classList.toggle("active");
+  if (light3.classList.contains("active")){
+      switch3.checked = true;
+      switch8.checked = true;
+  } else {
+      switch3.checked = false;
+      switch8.checked = false;
+
+  }
+
+
 });
 
 
@@ -18,6 +28,15 @@ switch2.addEventListener("change", function () {
 
   light1.classList.toggle("active");
   light7.classList.toggle("active");
+  if (light1.classList.contains("active")){
+      switch1.checked = true;
+      switch7.checked = true;
+  } else {
+      switch1.checked = false;
+      switch7.checked = false;
+  }
+
+
 });
 
 
@@ -32,6 +51,15 @@ switch3.addEventListener("change", function () {
   light4.classList.toggle("active");
   light6.classList.toggle("active");
   light8.classList.toggle("active");
+  if (light4.classList.contains("active")){
+      switch4.checked = true;
+      switch6.checked = true;
+      switch8.checked = true;
+  } else{
+      switch4.checked = false;
+      switch6.checked = false;
+      switch8.checked = false;
+  }
 });
 
 
@@ -43,17 +71,25 @@ switch4.addEventListener("change", function () {
 
   light2.classList.toggle("active");
   light9.classList.toggle("active");
+  if (light2.classList.contains("active")){
+      switch2.checked = true;
+      switch9.checked = true;
+  } else {
+      switch2.checked = false;
+      switch9.checked = false;
+  }
 });
 
 
 
-const switch5 = document.querySelector("#switch5");
+// const switch5 = document.querySelector("#switch5");
 
-switch5.addEventListener("change", function () {
-  const light5 = document.querySelector("#lightbulb5");
+// switch5.addEventListener("change", function () {
+//   const light5 = document.querySelector("#lightbulb5");
 
-  light5.classList.toggle("active");
-});
+//   light5.classList.toggle("active");
+
+// });
 
 
 
@@ -65,6 +101,13 @@ switch6.addEventListener("change", function () {
 
   light1.classList.toggle("active");
   light4.classList.toggle("active");
+  if (light1.classList.contains("active")){
+      switch1.checked = true;
+      switch4.checked = true;
+  } else {
+      switch1.checked = false;
+      switch4.checked = false;
+  }
 });
 
 
@@ -77,6 +120,13 @@ switch7.addEventListener("change", function () {
 
   light2.classList.toggle("active");
   light3.classList.toggle("active");
+  if (light2.classList.contains("active")){
+      switch2.checked = true;
+      switch3.checked = true;
+  } else {
+      switch2.checked = false;
+      switch3.checked = false;
+  }
 });
 
 
@@ -88,6 +138,13 @@ switch8.addEventListener("change", function () {
 
   light5.classList.toggle("active");
   light9.classList.toggle("active");
+  if (light5.classList.contains("active")){
+      switch5.checked = true;
+      switch9.checked = true;
+  } else {
+      switch5.checked = false;
+      switch9.checked = false;
+  }
 });
 
 
@@ -99,6 +156,13 @@ switch9.addEventListener("change", function () {
 
   light6.classList.toggle("active");
   light7.classList.toggle("active");
+  if (light6.classList.contains("active")){
+      switch6.checked = true;
+      switch7.checked = true;
+  } else {
+      switch6.checked = false;
+      switch7.checked = false;
+  }
 });
 
 ///FUNCTION CHANGE 57 FOR SWTICH 5 - MILD CHALLENGE///
@@ -109,6 +173,13 @@ switch57.addEventListener("change", function () {
     const light2 = document.querySelector("#lightbulb2");
     light1.classList.toggle("active");
     light2.classList.toggle("active");
+    if (light1.classList.contains("active")){
+        switch1.checked = true;
+        switch2.checked = true;
+    } else {
+        switch1.checked = false;
+        switch2.checked = false;
+    }
 });
 
 /// MASTER SWITCH - MEDIUM CHALLENGE///
@@ -133,14 +204,23 @@ const MasterSwitch = () => {
         }
 
 
-// this makes the switch stay in its current state when clicked
+
     });
     
     
 };
 
-
-
-
-
 masterSwitch.addEventListener("change", MasterSwitch);
+
+/// RESET BUTTON ///
+const resetButton = document.querySelector("#switch11");
+resetButton.addEventListener("click", function () {
+    const switches = document.querySelectorAll(".switch");
+    switches.forEach(switchElement => {
+        switchElement.checked = false;
+    });
+    const lights = document.querySelectorAll(".lightbulb");
+    lights.forEach(light => {
+        light.classList.remove("active");
+    });
+});
